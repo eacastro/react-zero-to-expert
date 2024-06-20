@@ -1,27 +1,27 @@
-// Desestructuración 
-// Asignación desestructurante
-const person = {
-    name: 'Tony',
-    age: 45,
-    key: 'ironman',
-    range: 'Junior',
+const characters = ["Goku", "Vegeta", "Trunks"];
+const [character1] = characters;
+const [, character2] = characters;
+const [, , character3] = characters;
+
+console.log(characters);
+console.log(character1);
+console.log(character2);
+console.log(character3);
+
+const getArray = () => {
+  return ["ABC", 123];
 };
 
-// La desestructuración o asignación desestructurante de objetos nos permite
-// acceder a los campos de un objeto para hacer
-// usos concretos de éstos
-const {name, age, key} = person;
+const [text, numbers] = getArray();
+console.log(text, numbers);
 
-console.log(name);
-console.log(age);
-console.log(key);
+const useState = (value) => {
+  return [
+    value,
+    () => {
+      console.log("Hello World!");
+    },
+  ];
+};
 
-
-// Con la desestructuracion también podemos recibir parámetros
-// que contengan valores por defecto, así como obtener los
-// valores de los campos del objeto proporcionado
-const fetchPerson = ({name, age, range = 'Senior'}) => {
-    console.log(name, age, range);
-}
-
-fetchPerson(person);
+const arr = useState('Goku');
